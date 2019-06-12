@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Proyecto_Entrega_4
 {
@@ -18,7 +19,7 @@ namespace Proyecto_Entrega_4
         string info_end = ""; // Aqui reescribiremos la informacion estadística
         int alto;
         int ancho;
-        int cantidad_mese = 20;
+        int cantidad_mese = 10;
         int mes = 0;
         public Mapa mapa1 = new Mapa();
         Terreno[,] opcion1;
@@ -31,9 +32,16 @@ namespace Proyecto_Entrega_4
         Terreno Nieve = new Terreno("NieveIce");
         Terreno Volcán = new Terreno("Volcanic");
         List<Bitmon> bitmons1 = new List<Bitmon>();
+        List<Bitmon> bitmonsInicial = new List<Bitmon>();
         public Form1()
         {
             InitializeComponent();
+            BitmonsMapButton.Enabled = false;
+            ResultadosButton.Enabled = false;
+            SaveButton.Enabled = false;
+            RestartButton.Enabled = false;
+            bunifuFlatButton1.Enabled = false;
+            MapButton.Enabled = false;
             OriginalWidth1 = MenuPanel1.Width;
             OriginalWidth2 = MenuPanel2.Width;
             OriginalWidthForm = this.Width;
@@ -91,6 +99,8 @@ namespace Proyecto_Entrega_4
         private void Map1Button_Click(object sender, EventArgs e)
         {
             this.Cursor = Cursors.WaitCursor;
+            MonthNumberBox.Visible = true;
+            InfoMonthLabel.Visible = true;
             NextMonthButton.Visible = true;
             MapSizeLabel.Visible = false;
             Map1Button.Visible = false;
@@ -98,6 +108,12 @@ namespace Proyecto_Entrega_4
             Map3Button.Visible = false;
             MonthNumberLabel.Visible = true;
             MapPanel.Visible = true;
+            MapButton.Enabled = true;
+            MapButton.Textcolor = Color.LightGray;
+            RestartButton.Enabled = true;
+            bunifuFlatButton1.Enabled = true;
+            RestartButton.Textcolor = Color.LightGray;
+            bunifuFlatButton1.Textcolor = Color.LightGray;
             //button3.Visible = false;
             alto = 6;
             ancho = 6;
@@ -176,6 +192,7 @@ namespace Proyecto_Entrega_4
 
             mapa1.Terrenos = opcion1;
             mapa1.Bitmons = bitmons1;
+            bitmonsInicial = bitmons1;
             for (int i = 0; i < alto; i++)
             {
                 for (int j = 0; j < ancho; j++)
@@ -187,7 +204,7 @@ namespace Proyecto_Entrega_4
                     label.Name = "label";
                     label.Size = new Size(51, 32);
                     label.TabIndex = 0;
-                    label.Font = new Font("Trebuchet MS", 8F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
+                    label.Font = new Font("Trebuchet MS", 15F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
                     string str = "";
                     var bitmons = mapa1.Bitmons.Where(x => (x.Posicion[0] == i) && (x.Posicion[1] == j)).ToList();
                     foreach (var bitmon in bitmons)
@@ -248,6 +265,8 @@ namespace Proyecto_Entrega_4
         private void Map2Button_Click(object sender, EventArgs e)
         {
             this.Cursor = Cursors.WaitCursor;
+            MonthNumberBox.Visible = true;
+            InfoMonthLabel.Visible = true;
             MonthNumberLabel.Visible = true;
             NextMonthButton.Visible = true;
             MapSizeLabel.Visible = false;
@@ -255,6 +274,12 @@ namespace Proyecto_Entrega_4
             Map2Button.Visible = false;
             Map3Button.Visible = false;
             MapPanel.Visible = true;
+            RestartButton.Enabled = true;
+            bunifuFlatButton1.Enabled = true;
+            MapButton.Enabled = true;
+            MapButton.Textcolor = Color.LightGray;
+            RestartButton.Textcolor = Color.LightGray;
+            bunifuFlatButton1.Textcolor = Color.LightGray;
             //button3.Visible = false;
             alto = 7;
             ancho = 7;
@@ -364,6 +389,7 @@ namespace Proyecto_Entrega_4
 
             mapa1.Terrenos = opcion1;
             mapa1.Bitmons = bitmons1;
+            bitmonsInicial = bitmons1;
 
             for (int i = 0; i < alto; i++)
             {
@@ -376,7 +402,7 @@ namespace Proyecto_Entrega_4
                     label.Name = "label";
                     label.Size = new Size(51, 32);
                     label.TabIndex = 0;
-                    label.Font = new Font("Trebuchet MS", 8F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
+                    label.Font = new Font("Trebuchet MS", 15F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
                     string str = "";
                     var bitmons = mapa1.Bitmons.Where(x => (x.Posicion[0] == i) && (x.Posicion[1] == j)).ToList();
                     foreach (var bitmon in bitmons)
@@ -437,6 +463,8 @@ namespace Proyecto_Entrega_4
         private void Map3Button_Click(object sender, EventArgs e)
         {
             this.Cursor = Cursors.WaitCursor;
+            InfoMonthLabel.Visible = true;
+            MonthNumberBox.Visible = true;
             MonthNumberLabel.Visible = true;
             NextMonthButton.Visible = true;
             MapSizeLabel.Visible = false;
@@ -444,6 +472,12 @@ namespace Proyecto_Entrega_4
             Map2Button.Visible = false;
             Map3Button.Visible = false;
             MapPanel.Visible = true;
+            RestartButton.Enabled = true;
+            bunifuFlatButton1.Enabled = true;
+            MapButton.Enabled = true;
+            MapButton.Textcolor = Color.LightGray;
+            RestartButton.Textcolor = Color.LightGray;
+            bunifuFlatButton1.Textcolor = Color.LightGray;
 
             alto = 10;
             ancho = 10;
@@ -637,6 +671,8 @@ namespace Proyecto_Entrega_4
 
             mapa1.Terrenos = opcion1;
             mapa1.Bitmons = bitmons1;
+            bitmonsInicial = bitmons1;
+
             for (int i = 0; i < alto; i++)
             {
                 for (int j = 0; j < ancho; j++)
@@ -648,7 +684,7 @@ namespace Proyecto_Entrega_4
                     label.Name = "label";
                     label.Size = new Size(51, 32);
                     label.TabIndex = 0;
-                    label.Font = new Font("Trebuchet MS", 8F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
+                    label.Font = new Font("Trebuchet MS", 15F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
                     string str = "";
                     var bitmons = mapa1.Bitmons.Where(x => (x.Posicion[0] == i) && (x.Posicion[1] == j)).ToList();
                     foreach (var bitmon in bitmons)
@@ -708,14 +744,268 @@ namespace Proyecto_Entrega_4
 
         private void NextMonthButton_Click(object sender, EventArgs e)
         {
-            InfoMonthLabel.Visible = true;
-            NextMonthButton.Text = "Siguiente mes";
             this.Cursor = Cursors.WaitCursor;
+            string infoMes = "";
+            mapa1.bitmons_creado_mes.Clear();
             mes++;
-            if (mes <= cantidad_mese && NextMonthButton.Text != "Empezar simulacion")
+            if (NextMonthButton.Text == "Empezar  simulacion")
             {
+                try
+                {
+                    cantidad_mese = Convert.ToInt32(MonthNumberBox.Text);
+                    MonthNumberBox.Visible = false;
+                    NextMonthButton.Text = "Siguiente mes";
+                    TitleMonthInfoLabel.Visible = true;
+                    BitmonsMapButton.Enabled = true;
+                    BitmonsMapButton.Textcolor = Color.LightGray;
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Este numero no es valido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MonthNumberBox.Text = "";
+                }
+                
+            }
+            if (NextMonthButton.Text == "Empezar de nuevo")
+            {
+                mes = 1;
+                ResultadosButton.Enabled = false;
+                ResultadosButton.Textcolor = Color.Gray;
+                SaveButton.Enabled = false;
+                SaveButton.Textcolor = Color.Gray;
+                InfoMonthLabel.Text = "";
+                NextMonthButton.Text = "Siguiente mes";
+                mapa1.Terrenos = opcion1;
+                bitmons1.Clear();
+                if (mapa1.Ancho == 6)
+                {
+                    int[] pos1 = { 3, 1 };
+                    Taplan taplan1 = new Taplan(pos1);
+
+                    //Poblacion inicial de Ents
+                    int[] pos6 = { 2, 3 };
+                    Ent Ent1 = new Ent(pos6);
+
+                    //Poblacion inicial de Wetar
+                    int[] pos10 = { 2, 0 };
+                    Wetar Wetar1 = new Wetar(pos10);
+
+                    //Poblacion inicial de Gofue
+                    int[] pos13 = { 3, 3 };
+                    Gofue Gofue1 = new Gofue(pos13);
+
+                    //Poblacion inicial Dorvalo
+                    int[] pos16 = { 0, 2 };
+                    Dorvalo Dorvalo1 = new Dorvalo(pos16);
+
+                    //Poblacion inicial Doti
+                    int[] pos19 = { 1, 2 };
+                    Doti Doti1 = new Doti(pos19);
+                    bitmons1.Add(taplan1);
+                    bitmons1.Add(Ent1);
+                    bitmons1.Add(Wetar1);
+                    bitmons1.Add(Gofue1);
+                    bitmons1.Add(Dorvalo1);
+                    bitmons1.Add(Doti1);
+                }
+                if (mapa1.Ancho == 7)
+                {
+                    int[] pos1 = { 2, 1 };
+                    Taplan taplan1 = new Taplan(pos1);
+                    int[] pos2 = { 4, 2 };
+                    Taplan taplan2 = new Taplan(pos2);
+
+                    //Poblacion inicial de Ents
+                    int[] pos6 = { 2, 4 };
+                    Ent Ent1 = new Ent(pos6);
+                    int[] pos7 = { 4, 6 };
+                    Ent Ent2 = new Ent(pos7);
+
+                    //Poblacion inicial de Wetar
+                    int[] pos10 = { 1, 0 };
+                    Wetar Wetar1 = new Wetar(pos10);
+                    int[] pos11 = { 0, 1 };
+                    Wetar Wetar2 = new Wetar(pos11);
+
+                    //Poblacion inicial de Gofue
+                    int[] pos13 = { 3, 3 };
+                    Gofue Gofue1 = new Gofue(pos13);
+                    int[] pos14 = { 3, 6 };
+                    Gofue Gofue2 = new Gofue(pos14);
+
+                    //Poblacion inicial Dorvalo
+                    int[] pos16 = { 5, 4 };
+                    Dorvalo Dorvalo1 = new Dorvalo(pos16);
+                    int[] pos17 = { 1, 3 };
+                    Dorvalo Dorvalo2 = new Dorvalo(pos17);
+
+                    //Poblacion inicial Doti
+                    int[] pos19 = { 3, 5 };
+                    Doti Doti1 = new Doti(pos19);
+                    int[] pos20 = { 5, 2 };
+                    Doti Doti2 = new Doti(pos20);
+
+                    bitmons1.Add(taplan1);
+                    bitmons1.Add(taplan2);
+                    bitmons1.Add(Ent1);
+                    bitmons1.Add(Ent2);
+                    bitmons1.Add(Wetar1);
+                    bitmons1.Add(Wetar2);
+                    bitmons1.Add(Gofue1);
+                    bitmons1.Add(Gofue2);
+                    bitmons1.Add(Dorvalo1);
+                    bitmons1.Add(Dorvalo2);
+                    bitmons1.Add(Doti1);
+                    bitmons1.Add(Doti2);
+                }
+                if (mapa1.Ancho == 10)
+                {
+                    int[] pos1 = { 2, 2 };
+                    Taplan taplan1 = new Taplan(pos1);
+                    int[] pos2 = { 4, 1 };
+                    Taplan taplan2 = new Taplan(pos2);
+                    int[] pos3 = { 4, 2 };
+                    Taplan taplan3 = new Taplan(pos3);
+                    int[] pos4 = { 5, 3 };
+                    Taplan taplan4 = new Taplan(pos4);
+                    int[] pos5 = { 6, 0 };
+                    Taplan taplan5 = new Taplan(pos5);
+
+                    //Poblacion inicial de Ents
+                    int[] pos6 = { 2, 4 };
+                    Ent Ent1 = new Ent(pos6);
+                    int[] pos7 = { 0, 9 };
+                    Ent Ent2 = new Ent(pos7);
+                    int[] pos8 = { 3, 9 };
+                    Ent Ent3 = new Ent(pos8);
+                    int[] pos9 = { 4, 4 };
+                    Ent Ent4 = new Ent(pos9);
+
+                    //Poblacion inicial de Wetar
+                    int[] pos10 = { 0, 5 };
+                    Wetar Wetar1 = new Wetar(pos10);
+                    int[] pos11 = { 0, 1 };
+                    Wetar Wetar2 = new Wetar(pos11);
+                    int[] pos12 = { 9, 0 };
+                    Wetar Wetar3 = new Wetar(pos12);
+
+                    //Poblacion inicial de Gofue
+                    int[] pos13 = { 1, 7 };
+                    Gofue Gofue1 = new Gofue(pos13);
+                    int[] pos14 = { 7, 7 };
+                    Gofue Gofue2 = new Gofue(pos14);
+                    int[] pos15 = { 9, 5 };
+                    Gofue Gofue3 = new Gofue(pos15);
+
+                    //Poblacion inicial Dorvalo
+                    int[] pos16 = { 1, 7 };
+                    Dorvalo Dorvalo1 = new Dorvalo(pos16);
+                    int[] pos17 = { 3, 7 };
+                    Dorvalo Dorvalo2 = new Dorvalo(pos17);
+                    int[] pos18 = { 2, 7 };
+                    Dorvalo Dorvalo3 = new Dorvalo(pos18);
+
+                    //Poblacion inicial Doti
+                    int[] pos19 = { 1, 5 };
+                    Doti Doti1 = new Doti(pos19);
+                    int[] pos20 = { 9, 7 };
+                    Doti Doti2 = new Doti(pos20);
+                    int[] pos21 = { 0, 0 };
+                    Doti Doti3 = new Doti(pos21);
+                    int[] pos22 = { 4, 7 };
+                    Doti Doti4 = new Doti(pos22);
+
+                    bitmons1.Add(taplan1);
+                    bitmons1.Add(taplan2);
+                    bitmons1.Add(taplan3);
+                    bitmons1.Add(taplan4);
+                    bitmons1.Add(taplan5);
+                    bitmons1.Add(Ent1);
+                    bitmons1.Add(Ent2);
+                    bitmons1.Add(Ent3);
+                    bitmons1.Add(Ent4);
+                    bitmons1.Add(Wetar1);
+                    bitmons1.Add(Wetar2);
+                    bitmons1.Add(Wetar3);
+                    bitmons1.Add(Gofue1);
+                    bitmons1.Add(Gofue2);
+                    bitmons1.Add(Gofue3);
+                    bitmons1.Add(Dorvalo1);
+                    bitmons1.Add(Dorvalo2);
+                    bitmons1.Add(Dorvalo3);
+                    bitmons1.Add(Doti1);
+                    bitmons1.Add(Doti2);
+                    bitmons1.Add(Doti3);
+                    bitmons1.Add(Doti4);
+                }
+                mapa1.Bitmons = bitmons1;
+                mapa1.sobrepoblacion = false;
+                mapa1.Bitmons_creados.Clear();
                 mapa1.bitmons_creado_mes.Clear();
-                string infoMes = "";
+                mapa1.Bitmons_muertos.Clear();
+                mapa1.bitmons_muertos_mes.Clear();
+                mapa1.Actualizar_espacios();
+
+                for (int i = 0; i < alto; i++)
+                {
+                    for (int j = 0; j < ancho; j++)
+                    {
+                        string str = "";
+                        var bitmons = mapa1.Bitmons.Where(x => (x.Posicion[0] == i) && (x.Posicion[1] == j)).ToList();
+                        foreach (var bitmon in bitmons)
+                        {
+                            if (bitmon.Tipo == "Dorvalo")
+                            {
+                                str += "🦅";
+                            }
+                            else if (bitmon.Tipo == "Doti")
+                            {
+                                str += "🐇";
+                            }
+                            else if (bitmon.Tipo == "Ent")
+                            {
+                                str += "🌵";
+                            }
+                            else if (bitmon.Tipo == "Gofue")
+                            {
+                                str += "🐉";
+                            }
+                            else if (bitmon.Tipo == "Taplan")
+                            {
+                                str += "🦎";
+                            }
+                            else if (bitmon.Tipo == "Wetar")
+                            {
+                                str += "🐟";
+                            }
+                        }
+                        labels[i, j].Text = str;
+                        if (opcion1[i, j].tipo == "Vegetacn")
+                        {
+                            labels[i, j].BackColor = Color.Green;
+                        }
+                        else if (opcion1[i, j].tipo == "Acuatico")
+                        {
+                            labels[i, j].BackColor = Color.Blue;
+                        }
+                        else if (opcion1[i, j].tipo == "Desierto")
+                        {
+                            labels[i, j].BackColor = Color.SandyBrown;
+                        }
+                        else if (opcion1[i, j].tipo == "NieveIce")
+                        {
+                            labels[i, j].BackColor = Color.Snow;
+                        }
+                        else
+                        {
+                            labels[i, j].BackColor = Color.DarkRed;
+                        }
+                    }
+                }
+            }
+            List<string> tipo_bitmons = new List<string>();
+            if (NextMonthButton.Text == "Siguiente mes")
+            {
                 string info = "    Bitmons en el mapa:\n";
                 int[] posENT = { 0, 0 };
                 Ent papa = new Ent(posENT);
@@ -810,8 +1100,6 @@ namespace Proyecto_Entrega_4
                         {
                             labels[i, j].BackColor = Color.DarkRed;
                         }
-                        MapPanel.Controls.Add(labels[i, j], j, i);
-
                     }
                 }
                 for (int k = 0; k < mapa1.Bitmons.Count; k++)
@@ -831,11 +1119,9 @@ namespace Proyecto_Entrega_4
                 }
                 if (mapa1.sobrepoblacion)
                 {
-                    infoMes += $"\nsobrepoblacion en el mes {mes}, se detuvo la simulación";
-                    NextMonthButton.Enabled = false;
+                    infoMes += $"\n\nsobrepoblacion en el mes {mes}, se detuvo la simulación\n";
                 }
                 numero_muertos += mapa1.bitmons_muertos_mes.Count * 1000 / mapa1.Bitmons.Count;
-                List<string> tipo_bitmons = new List<string>();
                 tipo_bitmons.Add("Taplan");
                 tipo_bitmons.Add("Doti");
                 tipo_bitmons.Add("Wetar");
@@ -858,105 +1144,154 @@ namespace Proyecto_Entrega_4
                     count++;
                 }
 
+                info += "\n\n\n";
                 BitmonsMapLabel.Text = info;
                 infoMes += "\n\n\n";
                 InfoMonthLabel.Text = infoMes;
                 MonthNumberLabel.Text = "Mes: " + Convert.ToString(mes);
-                
-                if (mes == cantidad_mese | mapa1.sobrepoblacion)
+            }
+            if (mes == cantidad_mese | mapa1.sobrepoblacion)
+            {
+                ResultadosButton.Enabled = true;
+                ResultadosButton.Textcolor = Color.LightGray;
+                SaveButton.Enabled = true;
+                SaveButton.Textcolor = Color.LightGray;
+                info_end = "";
+                NextMonthButton.Text = "Empezar de nuevo";
+
+                float promedio_vida = 0;
+                foreach (var bitmon in mapa1.Bitmons_muertos)
                 {
-                    info_end = "";
-                    NextMonthButton.Text = "Empezar nueva simulacion";
-
-                    float promedio_vida = 0;
-                    foreach (var bitmon in mapa1.Bitmons_muertos)
-                    {
-                        promedio_vida += bitmon.TiempoVivido;
-                    }
-                    foreach (var bitmon in mapa1.Bitmons)
-                    {
-                        promedio_vida += bitmon.TiempoVivido;
-                    }
-                    promedio_vida = promedio_vida * 10 / (mapa1.Bitmons_muertos.Count + mapa1.Bitmons.Count);
-                    info_end += $"El promedio de vida de los bitmons fue de {(float)((int)promedio_vida) / 10} meses.\n";
-
-                    foreach (var tipo in tipo_bitmons)
-                    {
-                        promedio_vida = 0;
-                        var bitmons = mapa1.Bitmons.Where(x => x.Tipo == tipo).ToList();
-                        var bitmons_m = mapa1.Bitmons_muertos.Where(x => x.Tipo == tipo).ToList();
-                        foreach (var bit in bitmons)
-                        {
-                            promedio_vida += bit.TiempoVivido;
-                        }
-                        foreach (var bit in bitmons_m)
-                        {
-                            promedio_vida += bit.TiempoVivido;
-                        }
-                        promedio_vida = promedio_vida * 10 / (bitmons.Count + bitmons_m.Count);
-                        info_end += $"\nEl promedio de vida de los {tipo} fue de {(float)((int)promedio_vida) / 10} meses";
-                    }
-                    info_end += '\n';
-                    numero_muertos = numero_muertos / mes;
-                    for (int i = 0; i < 6; i++)
-                    {
-                        numero_creados[i] = numero_creados[i] / mes;
-                    }
-                    int k = 0;
-                    foreach (var tipo1 in tipo_bitmons)
-                    {
-                        info_end += $"\nLa tasa bruta de natalidad de los {tipo1} fue de {Math.Round(numero_creados[k], 1)} º /ºº";
-                        k++;
-                    }
-                    info_end += $"\nLa tasa bruta de mortalidad de los Bitmons fue de {numero_muertos} º/ºº";
-                    info_end += "\n";
-                    foreach (var tipo in tipo_bitmons)
-                    {
-                        var bitmons = mapa1.Bitmons_creados.Where(x => x.Tipo == tipo).ToList();
-                        info_end += $"\nLa cantidad de hijos en promedio de los {tipo} fue de {Math.Round((float)bitmons.Count / mes, 1)} hijos por mes";
-                    }
-                    info_end += "\n";
-                    foreach (var tipo in tipo_bitmons)
-                    {
-                        var bitmons = mapa1.Bitmons.Where(x => x.Tipo == tipo).ToList();
-                        if (bitmons.Count == 0)
-                        {
-                            info_end += $"\nLa especie {tipo} se extinguio";
-                        }
-                    }
-                    info_end += "\n";
-                    foreach (var tipo in tipo_bitmons)
-                    {
-                        if (mapa1.Bitmons_muertos.Count != 0)
-                        {
-                            var bitmons = mapa1.Bitmons_muertos.Where(x => x.Tipo == tipo).ToList();
-                            info_end += $"\nHay {bitmons.Count} {tipo} en el Bithalla. Corresponden al {Math.Round((float)(bitmons.Count * 100) / mapa1.Bitmons_muertos.Count, 1)} % ";
-                        }
-                        else
-                        {
-                            info_end += $"\nNo hay ningun bitmon muerto.";
-                            break;
-                        }
-                    }
-                    info_end += "\n\n\n";
-                    InfoMonthLabel.Text = info_end;
-                    //Save.Enabled = true;
-                    //Save.Visible = true;
+                    promedio_vida += bitmon.TiempoVivido;
                 }
+                foreach (var bitmon in mapa1.Bitmons)
+                {
+                    promedio_vida += bitmon.TiempoVivido;
+                }
+                promedio_vida = promedio_vida * 10 / (mapa1.Bitmons_muertos.Count + mapa1.Bitmons.Count);
+                info_end += $"El promedio de vida de los bitmons fue de {(float)((int)promedio_vida) / 10} meses.\n";
+
+                foreach (var tipo in tipo_bitmons)
+                {
+                    promedio_vida = 0;
+                    var bitmons = mapa1.Bitmons.Where(x => x.Tipo == tipo).ToList();
+                    var bitmons_m = mapa1.Bitmons_muertos.Where(x => x.Tipo == tipo).ToList();
+                    foreach (var bit in bitmons)
+                    {
+                        promedio_vida += bit.TiempoVivido;
+                    }
+                    foreach (var bit in bitmons_m)
+                    {
+                        promedio_vida += bit.TiempoVivido;
+                    }
+                    promedio_vida = promedio_vida * 10 / (bitmons.Count + bitmons_m.Count);
+                    info_end += $"\nEl promedio de vida de los {tipo} fue de {(float)((int)promedio_vida) / 10} meses";
+                }
+                info_end += '\n';
+                numero_muertos = numero_muertos / mes;
+                for (int i = 0; i < 6; i++)
+                {
+                    numero_creados[i] = numero_creados[i] / mes;
+                }
+                int k = 0;
+                foreach (var tipo1 in tipo_bitmons)
+                {
+                    info_end += $"\nLa tasa bruta de natalidad de los {tipo1} fue de {Math.Round(numero_creados[k], 1)} º /ºº";
+                    k++;
+                }
+                info_end += $"\nLa tasa bruta de mortalidad de los Bitmons fue de {numero_muertos} º/ºº";
+                info_end += "\n";
+                foreach (var tipo in tipo_bitmons)
+                {
+                    var bitmons = mapa1.Bitmons_creados.Where(x => x.Tipo == tipo).ToList();
+                    info_end += $"\nLa cantidad de hijos en promedio de los {tipo} fue de {Math.Round((float)bitmons.Count / mes, 1)} hijos por mes";
+                }
+                info_end += "\n";
+                foreach (var tipo in tipo_bitmons)
+                {
+                    var bitmons = mapa1.Bitmons.Where(x => x.Tipo == tipo).ToList();
+                    if (bitmons.Count == 0)
+                    {
+                        info_end += $"\nLa especie {tipo} se extinguio";
+                    }
+                }
+                info_end += "\n";
+                foreach (var tipo in tipo_bitmons)
+                {
+                    if (mapa1.Bitmons_muertos.Count != 0)
+                    {
+                        var bitmons = mapa1.Bitmons_muertos.Where(x => x.Tipo == tipo).ToList();
+                        info_end += $"\nHay {bitmons.Count} {tipo} en el Bithalla. Corresponden al {Math.Round((float)(bitmons.Count * 100) / mapa1.Bitmons_muertos.Count, 1)} % ";
+                    }
+                    else
+                    {
+                        info_end += $"\nNo hay ningun bitmon muerto.";
+                        break;
+                    }
+                }
+               
+                ResultadosLabel.Text = info_end;
+                ResultadosLabel.Text += "\n\n\n";
             }
             this.Cursor = Cursors.Default;
         }
 
         private void BitmonsMapButton_Click(object sender, EventArgs e)
         {
-            CenterPanel2.Visible = false;
             InfoMonthPanel.Visible = false;
+            MapPanel.Visible = false;
+            MonthNumberLabel.Visible = false;
+            NextMonthButton.Visible = false;
+            ResultadosLabel.Visible = false;
+            BitmonsMapLabel.Visible = true;
+            CenterPanel2.Height = 691;
         }
 
         private void MapButton_Click(object sender, EventArgs e)
         {
-            CenterPanel2.Visible = true;
             InfoMonthPanel.Visible = true;
+            MapPanel.Visible = true;
+            MonthNumberLabel.Visible = true;
+            NextMonthButton.Visible = true;
+            ResultadosLabel.Visible = false;
+            BitmonsMapLabel.Visible = false;
+            CenterPanel2.Height = 537;
+        }
+
+        private void ResultadosButton_Click(object sender, EventArgs e)
+        {
+            InfoMonthPanel.Visible = false;
+            MapPanel.Visible = false;
+            MonthNumberLabel.Visible = false;
+            NextMonthButton.Visible = false;
+            BitmonsMapLabel.Visible = false;
+            ResultadosLabel.Visible = true;
+            CenterPanel2.Height = 691;
+        }
+
+        private void SaveButton_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.RestoreDirectory = true;
+            sfd.FileName = ".txt";
+            sfd.DefaultExt = ".txt";
+            sfd.Filter = "txt files (*.txt)|*.txt";
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                Stream fileStream = sfd.OpenFile();
+                StreamWriter sw = new StreamWriter(fileStream);
+
+                sw.Write(info_end);
+
+                sw.Close();
+                fileStream.Close();
+
+            }
+        }
+
+        private void RestartButton_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

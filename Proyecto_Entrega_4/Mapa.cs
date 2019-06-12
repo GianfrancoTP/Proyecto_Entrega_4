@@ -254,7 +254,7 @@ namespace Proyecto_Entrega_4
         {
             bitmons_muertos_mes.Clear();
 
-            if (Espacios_2.Count != 0)
+            if (Espacios_2.Count >= 0)
             {
                 foreach (var pos in Espacios_2)
                 {

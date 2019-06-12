@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            BunifuAnimatorNS.Animation animation1 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation12 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation11 = new BunifuAnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            BunifuAnimatorNS.Animation animation2 = new BunifuAnimatorNS.Animation();
             this.TopPanel = new System.Windows.Forms.Panel();
             this.MenuLabel = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.MaximizeButton = new Bunifu.Framework.UI.BunifuImageButton();
@@ -57,10 +57,10 @@
             this.Map3Button = new Bunifu.Framework.UI.BunifuTileButton();
             this.Map2Button = new Bunifu.Framework.UI.BunifuTileButton();
             this.MapPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.BitmonsMapLabel = new System.Windows.Forms.Label();
             this.InfoMonthPanel = new System.Windows.Forms.Panel();
             this.MonthNumberBox = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.InfoMonthLabel = new System.Windows.Forms.Label();
+            this.BitmonsMapLabel = new System.Windows.Forms.Label();
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.ElipseForm1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.ElipseMenu2 = new Bunifu.Framework.UI.BunifuElipse(this.components);
@@ -72,6 +72,8 @@
             this.ElipseMap3 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.ElipseCenterPanel2 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.ElipseNextMonth = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.ResultadosLabel = new System.Windows.Forms.Label();
+            this.TitleMonthInfoLabel = new System.Windows.Forms.Label();
             this.TopPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MaximizeButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CloseButton)).BeginInit();
@@ -259,7 +261,7 @@
             this.bunifuFlatButton1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.OpenAnimation.SetDecoration(this.bunifuFlatButton1, BunifuAnimatorNS.DecorationType.None);
             this.CloseAnimation.SetDecoration(this.bunifuFlatButton1, BunifuAnimatorNS.DecorationType.None);
-            this.bunifuFlatButton1.DisabledColor = System.Drawing.Color.Gray;
+            this.bunifuFlatButton1.DisabledColor = System.Drawing.Color.Transparent;
             this.bunifuFlatButton1.Iconcolor = System.Drawing.Color.Transparent;
             this.bunifuFlatButton1.Iconimage = ((System.Drawing.Image)(resources.GetObject("bunifuFlatButton1.Iconimage")));
             this.bunifuFlatButton1.Iconimage_right = null;
@@ -282,7 +284,7 @@
             this.bunifuFlatButton1.TabIndex = 7;
             this.bunifuFlatButton1.Text = "      Bitmons en el mapa";
             this.bunifuFlatButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bunifuFlatButton1.Textcolor = System.Drawing.Color.LightGray;
+            this.bunifuFlatButton1.Textcolor = System.Drawing.Color.Gray;
             this.bunifuFlatButton1.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
             // MapButton
@@ -295,7 +297,7 @@
             this.MapButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.OpenAnimation.SetDecoration(this.MapButton, BunifuAnimatorNS.DecorationType.None);
             this.CloseAnimation.SetDecoration(this.MapButton, BunifuAnimatorNS.DecorationType.None);
-            this.MapButton.DisabledColor = System.Drawing.Color.Gray;
+            this.MapButton.DisabledColor = System.Drawing.Color.Transparent;
             this.MapButton.Iconcolor = System.Drawing.Color.Transparent;
             this.MapButton.Iconimage = ((System.Drawing.Image)(resources.GetObject("MapButton.Iconimage")));
             this.MapButton.Iconimage_right = null;
@@ -318,7 +320,7 @@
             this.MapButton.TabIndex = 6;
             this.MapButton.Text = "      Mapa Bitmonlandia";
             this.MapButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.MapButton.Textcolor = System.Drawing.Color.LightGray;
+            this.MapButton.Textcolor = System.Drawing.Color.Gray;
             this.MapButton.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MapButton.Click += new System.EventHandler(this.MapButton_Click);
             // 
@@ -332,7 +334,7 @@
             this.RestartButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.OpenAnimation.SetDecoration(this.RestartButton, BunifuAnimatorNS.DecorationType.None);
             this.CloseAnimation.SetDecoration(this.RestartButton, BunifuAnimatorNS.DecorationType.None);
-            this.RestartButton.DisabledColor = System.Drawing.Color.Gray;
+            this.RestartButton.DisabledColor = System.Drawing.Color.Transparent;
             this.RestartButton.Iconcolor = System.Drawing.Color.Transparent;
             this.RestartButton.Iconimage = ((System.Drawing.Image)(resources.GetObject("RestartButton.Iconimage")));
             this.RestartButton.Iconimage_right = null;
@@ -355,8 +357,9 @@
             this.RestartButton.TabIndex = 4;
             this.RestartButton.Text = "      Empezar nueva                   simulación";
             this.RestartButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.RestartButton.Textcolor = System.Drawing.Color.LightGray;
+            this.RestartButton.Textcolor = System.Drawing.Color.Gray;
             this.RestartButton.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RestartButton.Click += new System.EventHandler(this.RestartButton_Click);
             // 
             // SaveButton
             // 
@@ -368,7 +371,7 @@
             this.SaveButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.OpenAnimation.SetDecoration(this.SaveButton, BunifuAnimatorNS.DecorationType.None);
             this.CloseAnimation.SetDecoration(this.SaveButton, BunifuAnimatorNS.DecorationType.None);
-            this.SaveButton.DisabledColor = System.Drawing.Color.Gray;
+            this.SaveButton.DisabledColor = System.Drawing.Color.Transparent;
             this.SaveButton.Iconcolor = System.Drawing.Color.Transparent;
             this.SaveButton.Iconimage = ((System.Drawing.Image)(resources.GetObject("SaveButton.Iconimage")));
             this.SaveButton.Iconimage_right = null;
@@ -391,8 +394,9 @@
             this.SaveButton.TabIndex = 3;
             this.SaveButton.Text = "      Guardar datos                     simulación";
             this.SaveButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.SaveButton.Textcolor = System.Drawing.Color.LightGray;
+            this.SaveButton.Textcolor = System.Drawing.Color.Gray;
             this.SaveButton.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
             // ResultadosButton
             // 
@@ -404,7 +408,7 @@
             this.ResultadosButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.OpenAnimation.SetDecoration(this.ResultadosButton, BunifuAnimatorNS.DecorationType.None);
             this.CloseAnimation.SetDecoration(this.ResultadosButton, BunifuAnimatorNS.DecorationType.None);
-            this.ResultadosButton.DisabledColor = System.Drawing.Color.Gray;
+            this.ResultadosButton.DisabledColor = System.Drawing.Color.Transparent;
             this.ResultadosButton.Iconcolor = System.Drawing.Color.Transparent;
             this.ResultadosButton.Iconimage = ((System.Drawing.Image)(resources.GetObject("ResultadosButton.Iconimage")));
             this.ResultadosButton.Iconimage_right = null;
@@ -427,8 +431,9 @@
             this.ResultadosButton.TabIndex = 2;
             this.ResultadosButton.Text = "      Resultado de                      simulación";
             this.ResultadosButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ResultadosButton.Textcolor = System.Drawing.Color.LightGray;
+            this.ResultadosButton.Textcolor = System.Drawing.Color.Gray;
             this.ResultadosButton.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ResultadosButton.Click += new System.EventHandler(this.ResultadosButton_Click);
             // 
             // BitmonsMapButton
             // 
@@ -440,7 +445,7 @@
             this.BitmonsMapButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.OpenAnimation.SetDecoration(this.BitmonsMapButton, BunifuAnimatorNS.DecorationType.None);
             this.CloseAnimation.SetDecoration(this.BitmonsMapButton, BunifuAnimatorNS.DecorationType.None);
-            this.BitmonsMapButton.DisabledColor = System.Drawing.Color.Gray;
+            this.BitmonsMapButton.DisabledColor = System.Drawing.Color.Transparent;
             this.BitmonsMapButton.Iconcolor = System.Drawing.Color.Transparent;
             this.BitmonsMapButton.Iconimage = ((System.Drawing.Image)(resources.GetObject("BitmonsMapButton.Iconimage")));
             this.BitmonsMapButton.Iconimage_right = null;
@@ -463,7 +468,7 @@
             this.BitmonsMapButton.TabIndex = 1;
             this.BitmonsMapButton.Text = "      Bitmons en el mapa";
             this.BitmonsMapButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BitmonsMapButton.Textcolor = System.Drawing.Color.LightGray;
+            this.BitmonsMapButton.Textcolor = System.Drawing.Color.Gray;
             this.BitmonsMapButton.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BitmonsMapButton.Click += new System.EventHandler(this.BitmonsMapButton_Click);
             // 
@@ -472,7 +477,6 @@
             this.CenterPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
             this.CenterPanel1.Controls.Add(this.CenterPanel2);
             this.CenterPanel1.Controls.Add(this.InfoMonthPanel);
-            this.CenterPanel1.Controls.Add(this.BitmonsMapLabel);
             this.CloseAnimation.SetDecoration(this.CenterPanel1, BunifuAnimatorNS.DecorationType.None);
             this.OpenAnimation.SetDecoration(this.CenterPanel1, BunifuAnimatorNS.DecorationType.None);
             this.CenterPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -486,9 +490,12 @@
             this.CenterPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.CenterPanel2.AutoScroll = true;
             this.CenterPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(41)))), ((int)(((byte)(61)))));
+            this.CenterPanel2.Controls.Add(this.ResultadosLabel);
             this.CenterPanel2.Controls.Add(this.NextMonthButton);
             this.CenterPanel2.Controls.Add(this.MonthNumberLabel);
+            this.CenterPanel2.Controls.Add(this.BitmonsMapLabel);
             this.CenterPanel2.Controls.Add(this.MapSizeLabel);
             this.CenterPanel2.Controls.Add(this.Map1Button);
             this.CenterPanel2.Controls.Add(this.Map3Button);
@@ -507,7 +514,7 @@
             this.NextMonthButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(21)))), ((int)(((byte)(80)))));
             this.NextMonthButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.NextMonthButton.BorderRadius = 0;
-            this.NextMonthButton.ButtonText = "Empezar  simulación";
+            this.NextMonthButton.ButtonText = "Empezar  simulacion";
             this.NextMonthButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.OpenAnimation.SetDecoration(this.NextMonthButton, BunifuAnimatorNS.DecorationType.None);
             this.CloseAnimation.SetDecoration(this.NextMonthButton, BunifuAnimatorNS.DecorationType.None);
@@ -532,7 +539,7 @@
             this.NextMonthButton.selected = false;
             this.NextMonthButton.Size = new System.Drawing.Size(161, 48);
             this.NextMonthButton.TabIndex = 7;
-            this.NextMonthButton.Text = "Empezar  simulación";
+            this.NextMonthButton.Text = "Empezar  simulacion";
             this.NextMonthButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.NextMonthButton.Textcolor = System.Drawing.Color.White;
             this.NextMonthButton.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -561,7 +568,7 @@
             this.CloseAnimation.SetDecoration(this.MapSizeLabel, BunifuAnimatorNS.DecorationType.None);
             this.MapSizeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MapSizeLabel.ForeColor = System.Drawing.Color.White;
-            this.MapSizeLabel.Location = new System.Drawing.Point(149, 142);
+            this.MapSizeLabel.Location = new System.Drawing.Point(158, 142);
             this.MapSizeLabel.Name = "MapSizeLabel";
             this.MapSizeLabel.Size = new System.Drawing.Size(391, 31);
             this.MapSizeLabel.TabIndex = 4;
@@ -674,25 +681,13 @@
             this.MapPanel.TabIndex = 5;
             this.MapPanel.Visible = false;
             // 
-            // BitmonsMapLabel
-            // 
-            this.BitmonsMapLabel.AutoSize = true;
-            this.OpenAnimation.SetDecoration(this.BitmonsMapLabel, BunifuAnimatorNS.DecorationType.None);
-            this.CloseAnimation.SetDecoration(this.BitmonsMapLabel, BunifuAnimatorNS.DecorationType.None);
-            this.BitmonsMapLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BitmonsMapLabel.ForeColor = System.Drawing.Color.White;
-            this.BitmonsMapLabel.Location = new System.Drawing.Point(18, 27);
-            this.BitmonsMapLabel.Name = "BitmonsMapLabel";
-            this.BitmonsMapLabel.Size = new System.Drawing.Size(60, 24);
-            this.BitmonsMapLabel.TabIndex = 0;
-            this.BitmonsMapLabel.Text = "label1";
-            // 
             // InfoMonthPanel
             // 
             this.InfoMonthPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.InfoMonthPanel.AutoScroll = true;
             this.InfoMonthPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(41)))), ((int)(((byte)(61)))));
+            this.InfoMonthPanel.Controls.Add(this.TitleMonthInfoLabel);
             this.InfoMonthPanel.Controls.Add(this.MonthNumberBox);
             this.InfoMonthPanel.Controls.Add(this.InfoMonthLabel);
             this.CloseAnimation.SetDecoration(this.InfoMonthPanel, BunifuAnimatorNS.DecorationType.None);
@@ -717,7 +712,7 @@
             this.MonthNumberBox.LineIdleColor = System.Drawing.Color.Gray;
             this.MonthNumberBox.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(21)))), ((int)(((byte)(80)))));
             this.MonthNumberBox.LineThickness = 4;
-            this.MonthNumberBox.Location = new System.Drawing.Point(25, 52);
+            this.MonthNumberBox.Location = new System.Drawing.Point(139, 74);
             this.MonthNumberBox.Margin = new System.Windows.Forms.Padding(7);
             this.MonthNumberBox.Name = "MonthNumberBox";
             this.MonthNumberBox.Size = new System.Drawing.Size(418, 49);
@@ -731,13 +726,27 @@
             this.InfoMonthLabel.AutoSize = true;
             this.OpenAnimation.SetDecoration(this.InfoMonthLabel, BunifuAnimatorNS.DecorationType.None);
             this.CloseAnimation.SetDecoration(this.InfoMonthLabel, BunifuAnimatorNS.DecorationType.None);
-            this.InfoMonthLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.InfoMonthLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.InfoMonthLabel.ForeColor = System.Drawing.Color.White;
-            this.InfoMonthLabel.Location = new System.Drawing.Point(21, 16);
+            this.InfoMonthLabel.Location = new System.Drawing.Point(28, 42);
             this.InfoMonthLabel.Name = "InfoMonthLabel";
-            this.InfoMonthLabel.Size = new System.Drawing.Size(51, 20);
+            this.InfoMonthLabel.Size = new System.Drawing.Size(46, 18);
             this.InfoMonthLabel.TabIndex = 1;
             this.InfoMonthLabel.Text = "label1";
+            // 
+            // BitmonsMapLabel
+            // 
+            this.BitmonsMapLabel.AutoSize = true;
+            this.OpenAnimation.SetDecoration(this.BitmonsMapLabel, BunifuAnimatorNS.DecorationType.None);
+            this.CloseAnimation.SetDecoration(this.BitmonsMapLabel, BunifuAnimatorNS.DecorationType.None);
+            this.BitmonsMapLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BitmonsMapLabel.ForeColor = System.Drawing.Color.White;
+            this.BitmonsMapLabel.Location = new System.Drawing.Point(40, 24);
+            this.BitmonsMapLabel.Name = "BitmonsMapLabel";
+            this.BitmonsMapLabel.Size = new System.Drawing.Size(60, 24);
+            this.BitmonsMapLabel.TabIndex = 0;
+            this.BitmonsMapLabel.Text = "label1";
+            this.BitmonsMapLabel.Visible = false;
             // 
             // bunifuDragControl1
             // 
@@ -760,43 +769,43 @@
             // 
             this.OpenAnimation.AnimationType = BunifuAnimatorNS.AnimationType.Leaf;
             this.OpenAnimation.Cursor = null;
-            animation1.AnimateOnlyDifferences = true;
-            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
-            animation1.LeafCoeff = 1F;
-            animation1.MaxTime = 1F;
-            animation1.MinTime = 0F;
-            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
-            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
-            animation1.MosaicSize = 0;
-            animation1.Padding = new System.Windows.Forms.Padding(0);
-            animation1.RotateCoeff = 0F;
-            animation1.RotateLimit = 0F;
-            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
-            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
-            animation1.TimeCoeff = 0F;
-            animation1.TransparencyCoeff = 0F;
-            this.OpenAnimation.DefaultAnimation = animation1;
+            animation12.AnimateOnlyDifferences = true;
+            animation12.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation12.BlindCoeff")));
+            animation12.LeafCoeff = 1F;
+            animation12.MaxTime = 1F;
+            animation12.MinTime = 0F;
+            animation12.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation12.MosaicCoeff")));
+            animation12.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation12.MosaicShift")));
+            animation12.MosaicSize = 0;
+            animation12.Padding = new System.Windows.Forms.Padding(0);
+            animation12.RotateCoeff = 0F;
+            animation12.RotateLimit = 0F;
+            animation12.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation12.ScaleCoeff")));
+            animation12.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation12.SlideCoeff")));
+            animation12.TimeCoeff = 0F;
+            animation12.TransparencyCoeff = 0F;
+            this.OpenAnimation.DefaultAnimation = animation12;
             // 
             // CloseAnimation
             // 
             this.CloseAnimation.AnimationType = BunifuAnimatorNS.AnimationType.Leaf;
             this.CloseAnimation.Cursor = null;
-            animation2.AnimateOnlyDifferences = true;
-            animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
-            animation2.LeafCoeff = 1F;
-            animation2.MaxTime = 1F;
-            animation2.MinTime = 0F;
-            animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
-            animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
-            animation2.MosaicSize = 0;
-            animation2.Padding = new System.Windows.Forms.Padding(0);
-            animation2.RotateCoeff = 0F;
-            animation2.RotateLimit = 0F;
-            animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
-            animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
-            animation2.TimeCoeff = 0F;
-            animation2.TransparencyCoeff = 0F;
-            this.CloseAnimation.DefaultAnimation = animation2;
+            animation11.AnimateOnlyDifferences = true;
+            animation11.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation11.BlindCoeff")));
+            animation11.LeafCoeff = 1F;
+            animation11.MaxTime = 1F;
+            animation11.MinTime = 0F;
+            animation11.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation11.MosaicCoeff")));
+            animation11.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation11.MosaicShift")));
+            animation11.MosaicSize = 0;
+            animation11.Padding = new System.Windows.Forms.Padding(0);
+            animation11.RotateCoeff = 0F;
+            animation11.RotateLimit = 0F;
+            animation11.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation11.ScaleCoeff")));
+            animation11.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation11.SlideCoeff")));
+            animation11.TimeCoeff = 0F;
+            animation11.TransparencyCoeff = 0F;
+            this.CloseAnimation.DefaultAnimation = animation11;
             // 
             // ElipseInfoMonth
             // 
@@ -828,6 +837,33 @@
             this.ElipseNextMonth.ElipseRadius = 10;
             this.ElipseNextMonth.TargetControl = this.NextMonthButton;
             // 
+            // ResultadosLabel
+            // 
+            this.ResultadosLabel.AutoSize = true;
+            this.OpenAnimation.SetDecoration(this.ResultadosLabel, BunifuAnimatorNS.DecorationType.None);
+            this.CloseAnimation.SetDecoration(this.ResultadosLabel, BunifuAnimatorNS.DecorationType.None);
+            this.ResultadosLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ResultadosLabel.ForeColor = System.Drawing.Color.White;
+            this.ResultadosLabel.Location = new System.Drawing.Point(40, 24);
+            this.ResultadosLabel.Name = "ResultadosLabel";
+            this.ResultadosLabel.Size = new System.Drawing.Size(60, 24);
+            this.ResultadosLabel.TabIndex = 6;
+            this.ResultadosLabel.Text = "label1";
+            this.ResultadosLabel.Visible = false;
+            // 
+            // TitleMonthInfoLabel
+            // 
+            this.TitleMonthInfoLabel.AutoSize = true;
+            this.OpenAnimation.SetDecoration(this.TitleMonthInfoLabel, BunifuAnimatorNS.DecorationType.None);
+            this.CloseAnimation.SetDecoration(this.TitleMonthInfoLabel, BunifuAnimatorNS.DecorationType.None);
+            this.TitleMonthInfoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TitleMonthInfoLabel.Location = new System.Drawing.Point(206, 11);
+            this.TitleMonthInfoLabel.Name = "TitleMonthInfoLabel";
+            this.TitleMonthInfoLabel.Size = new System.Drawing.Size(281, 24);
+            this.TitleMonthInfoLabel.TabIndex = 3;
+            this.TitleMonthInfoLabel.Text = "Informacion sobre el actual mes:";
+            this.TitleMonthInfoLabel.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -852,7 +888,6 @@
             this.MenuPanel1.ResumeLayout(false);
             this.MenuPanel2.ResumeLayout(false);
             this.CenterPanel1.ResumeLayout(false);
-            this.CenterPanel1.PerformLayout();
             this.CenterPanel2.ResumeLayout(false);
             this.CenterPanel2.PerformLayout();
             this.InfoMonthPanel.ResumeLayout(false);
@@ -903,6 +938,8 @@
         private Bunifu.Framework.UI.BunifuElipse ElipseNextMonth;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label BitmonsMapLabel;
+        private System.Windows.Forms.Label ResultadosLabel;
+        private System.Windows.Forms.Label TitleMonthInfoLabel;
     }
 }
 
