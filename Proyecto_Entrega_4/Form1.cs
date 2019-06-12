@@ -747,7 +747,7 @@ namespace Proyecto_Entrega_4
             this.Cursor = Cursors.WaitCursor;
             string infoMes = "";
             mapa1.bitmons_creado_mes.Clear();
-            mes++;
+            
             if (NextMonthButton.Text == "Empezar  simulacion")
             {
                 try
@@ -1006,6 +1006,7 @@ namespace Proyecto_Entrega_4
             List<string> tipo_bitmons = new List<string>();
             if (NextMonthButton.Text == "Siguiente mes")
             {
+                mes++;
                 string info = "    Bitmons en el mapa:\n";
                 int[] posENT = { 0, 0 };
                 Ent papa = new Ent(posENT);
