@@ -1291,7 +1291,7 @@ namespace Proyecto_Entrega_4
 
         private void RestartButton_Click(object sender, EventArgs e)
         {
-            
+            Application.Restart();
         }
     }
 }
