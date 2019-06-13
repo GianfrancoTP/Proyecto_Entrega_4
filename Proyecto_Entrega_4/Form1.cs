@@ -768,7 +768,7 @@ namespace Proyecto_Entrega_4
             }
             if (NextMonthButton.Text == "Empezar de nuevo")
             {
-                mes = 1;
+                mes = 0;
                 ResultadosButton.Enabled = false;
                 ResultadosButton.Textcolor = Color.Gray;
                 SaveButton.Enabled = false;
@@ -807,6 +807,42 @@ namespace Proyecto_Entrega_4
                     bitmons1.Add(Gofue1);
                     bitmons1.Add(Dorvalo1);
                     bitmons1.Add(Doti1);
+                    opcion1[0, 0] = Acuático;
+                    opcion1[0, 1] = Vegetación;
+                    opcion1[0, 2] = Vegetación;
+                    opcion1[0, 3] = Vegetación;
+                    opcion1[0, 4] = Vegetación;
+                    opcion1[0, 5] = Desierto;
+                    opcion1[1, 0] = Acuático;
+                    opcion1[1, 1] = Vegetación;
+                    opcion1[1, 2] = Volcán;
+                    opcion1[1, 3] = Volcán;
+                    opcion1[1, 4] = Volcán;
+                    opcion1[1, 5] = Desierto;
+                    opcion1[2, 0] = Acuático;
+                    opcion1[2, 1] = Vegetación;
+                    opcion1[2, 2] = Volcán;
+                    opcion1[2, 3] = Nieve;
+                    opcion1[2, 4] = Volcán;
+                    opcion1[2, 5] = Desierto;
+                    opcion1[3, 0] = Acuático;
+                    opcion1[3, 1] = Vegetación;
+                    opcion1[3, 2] = Volcán;
+                    opcion1[3, 3] = Volcán;
+                    opcion1[3, 4] = Volcán;
+                    opcion1[3, 5] = Desierto;
+                    opcion1[4, 0] = Acuático;
+                    opcion1[4, 1] = Vegetación;
+                    opcion1[4, 2] = Vegetación;
+                    opcion1[4, 3] = Desierto;
+                    opcion1[4, 4] = Desierto;
+                    opcion1[4, 5] = Desierto;
+                    opcion1[5, 0] = Acuático;
+                    opcion1[5, 1] = Vegetación;
+                    opcion1[5, 2] = Desierto;
+                    opcion1[5, 3] = Desierto;
+                    opcion1[5, 4] = Desierto;
+                    opcion1[5, 5] = Desierto;
                 }
                 if (mapa1.Ancho == 7)
                 {
@@ -857,6 +893,55 @@ namespace Proyecto_Entrega_4
                     bitmons1.Add(Dorvalo2);
                     bitmons1.Add(Doti1);
                     bitmons1.Add(Doti2);
+                    opcion1[0, 0] = Nieve;
+                    opcion1[0, 1] = Acuático;
+                    opcion1[0, 2] = Desierto;
+                    opcion1[0, 3] = Desierto;
+                    opcion1[0, 4] = Desierto;
+                    opcion1[0, 5] = Acuático;
+                    opcion1[0, 6] = Nieve;
+                    opcion1[1, 0] = Acuático;
+                    opcion1[1, 1] = Acuático;
+                    opcion1[1, 2] = Vegetación;
+                    opcion1[1, 3] = Vegetación;
+                    opcion1[1, 4] = Vegetación;
+                    opcion1[1, 5] = Acuático;
+                    opcion1[1, 6] = Acuático;
+                    opcion1[2, 0] = Desierto;
+                    opcion1[2, 1] = Vegetación;
+                    opcion1[2, 2] = Vegetación;
+                    opcion1[2, 3] = Volcán;
+                    opcion1[2, 4] = Vegetación;
+                    opcion1[2, 5] = Vegetación;
+                    opcion1[2, 6] = Desierto;
+                    opcion1[3, 0] = Desierto;
+                    opcion1[3, 1] = Vegetación;
+                    opcion1[3, 2] = Volcán;
+                    opcion1[3, 3] = Volcán;
+                    opcion1[3, 4] = Volcán;
+                    opcion1[3, 5] = Vegetación;
+                    opcion1[3, 6] = Desierto;
+                    opcion1[4, 0] = Desierto;
+                    opcion1[4, 1] = Vegetación;
+                    opcion1[4, 2] = Vegetación;
+                    opcion1[4, 3] = Volcán;
+                    opcion1[4, 4] = Vegetación;
+                    opcion1[4, 5] = Vegetación;
+                    opcion1[4, 6] = Desierto;
+                    opcion1[5, 0] = Acuático;
+                    opcion1[5, 1] = Acuático;
+                    opcion1[5, 2] = Vegetación;
+                    opcion1[5, 3] = Vegetación;
+                    opcion1[5, 4] = Vegetación;
+                    opcion1[5, 5] = Acuático;
+                    opcion1[5, 6] = Acuático;
+                    opcion1[6, 0] = Nieve;
+                    opcion1[6, 1] = Acuático;
+                    opcion1[6, 2] = Desierto;
+                    opcion1[6, 3] = Desierto;
+                    opcion1[6, 4] = Desierto;
+                    opcion1[6, 5] = Acuático;
+                    opcion1[6, 6] = Nieve;
                 }
                 if (mapa1.Ancho == 10)
                 {
@@ -937,6 +1022,107 @@ namespace Proyecto_Entrega_4
                     bitmons1.Add(Doti2);
                     bitmons1.Add(Doti3);
                     bitmons1.Add(Doti4);
+                    opcion1[0, 0] = Desierto;
+                    opcion1[1, 0] = Desierto;
+                    opcion1[1, 1] = Desierto;
+                    opcion1[1, 2] = Desierto;
+                    opcion1[1, 3] = Desierto;
+                    opcion1[1, 4] = Desierto;
+                    opcion1[1, 5] = Desierto;
+                    opcion1[1, 6] = Desierto;
+                    opcion1[2, 3] = Desierto;
+                    opcion1[2, 4] = Desierto;
+                    opcion1[2, 5] = Desierto;
+                    opcion1[2, 6] = Desierto;
+                    opcion1[2, 7] = Desierto;
+                    opcion1[3, 6] = Desierto;
+                    opcion1[3, 7] = Desierto;
+                    opcion1[3, 8] = Desierto;
+                    opcion1[3, 9] = Desierto;
+                    opcion1[4, 5] = Desierto;
+                    opcion1[4, 6] = Desierto;
+                    opcion1[4, 7] = Desierto;
+                    opcion1[4, 8] = Desierto;
+                    opcion1[4, 9] = Desierto;
+                    opcion1[5, 6] = Desierto;
+                    opcion1[5, 8] = Desierto;
+                    opcion1[0, 1] = Acuático;
+                    opcion1[0, 1] = Acuático;
+                    opcion1[0, 2] = Acuático;
+                    opcion1[0, 3] = Acuático;
+                    opcion1[0, 4] = Acuático;
+                    opcion1[0, 5] = Acuático;
+                    opcion1[5, 7] = Acuático;
+                    opcion1[5, 9] = Acuático;
+                    opcion1[6, 5] = Acuático;
+                    opcion1[6, 6] = Acuático;
+                    opcion1[6, 7] = Acuático;
+                    opcion1[6, 8] = Acuático;
+                    opcion1[6, 9] = Acuático;
+                    opcion1[7, 1] = Acuático;
+                    opcion1[7, 4] = Acuático;
+                    opcion1[7, 5] = Acuático;
+                    opcion1[7, 9] = Acuático;
+                    opcion1[8, 0] = Acuático;
+                    opcion1[8, 1] = Acuático;
+                    opcion1[8, 2] = Acuático;
+                    opcion1[8, 3] = Acuático;
+                    opcion1[8, 4] = Acuático;
+                    opcion1[9, 0] = Acuático;
+                    opcion1[9, 1] = Acuático;
+                    opcion1[9, 2] = Acuático;
+                    opcion1[9, 3] = Acuático;
+                    opcion1[0, 6] = Nieve;
+                    opcion1[0, 7] = Nieve;
+                    opcion1[0, 8] = Nieve;
+                    opcion1[0, 9] = Nieve;
+                    opcion1[1, 7] = Nieve;
+                    opcion1[1, 8] = Nieve;
+                    opcion1[1, 9] = Nieve;
+                    opcion1[2, 8] = Nieve;
+                    opcion1[2, 9] = Nieve;
+                    opcion1[2, 0] = Vegetación;
+                    opcion1[2, 1] = Vegetación;
+                    opcion1[2, 2] = Vegetación;
+                    opcion1[3, 0] = Vegetación;
+                    opcion1[3, 1] = Vegetación;
+                    opcion1[3, 2] = Vegetación;
+                    opcion1[3, 3] = Vegetación;
+                    opcion1[3, 4] = Vegetación;
+                    opcion1[3, 5] = Vegetación;
+                    opcion1[4, 0] = Vegetación;
+                    opcion1[4, 1] = Vegetación;
+                    opcion1[4, 2] = Vegetación;
+                    opcion1[4, 3] = Vegetación;
+                    opcion1[4, 4] = Vegetación;
+                    opcion1[5, 0] = Vegetación;
+                    opcion1[5, 1] = Vegetación;
+                    opcion1[5, 2] = Vegetación;
+                    opcion1[5, 3] = Vegetación;
+                    opcion1[5, 4] = Vegetación;
+                    opcion1[5, 5] = Vegetación;
+                    opcion1[6, 0] = Vegetación;
+                    opcion1[6, 1] = Vegetación;
+                    opcion1[6, 2] = Vegetación;
+                    opcion1[6, 3] = Vegetación;
+                    opcion1[6, 4] = Vegetación;
+                    opcion1[7, 0] = Vegetación;
+                    opcion1[7, 2] = Vegetación;
+                    opcion1[7, 3] = Vegetación;
+                    opcion1[7, 6] = Volcán;
+                    opcion1[7, 7] = Volcán;
+                    opcion1[7, 8] = Volcán;
+                    opcion1[8, 5] = Volcán;
+                    opcion1[8, 6] = Volcán;
+                    opcion1[8, 7] = Volcán;
+                    opcion1[8, 8] = Volcán;
+                    opcion1[8, 9] = Volcán;
+                    opcion1[9, 4] = Volcán;
+                    opcion1[9, 5] = Volcán;
+                    opcion1[9, 6] = Volcán;
+                    opcion1[9, 7] = Volcán;
+                    opcion1[9, 8] = Volcán;
+                    opcion1[9, 9] = Volcán;
                 }
                 mapa1.Bitmons = bitmons1;
                 mapa1.sobrepoblacion = false;
@@ -1100,6 +1286,22 @@ namespace Proyecto_Entrega_4
                         else
                         {
                             labels[i, j].BackColor = Color.DarkRed;
+                        }
+                        if ((labels[i,j].Text == "🦎") && labels[i, j].BackColor == Color.SandyBrown)
+                        {
+                            labels[i, j].BackColor = Color.Green;
+                            opcion1[i, j] = Vegetación;
+                        }
+
+                        if ((labels[i, j].Text == "🐉")  && labels[i, j].BackColor == Color.Green)
+                        {
+                            labels[i, j].BackColor = Color.SandyBrown;
+                            opcion1[i, j] = Desierto;
+                        }
+                        if ((labels[i, j].Text == "🐉") && labels[i, j].BackColor == Color.Snow)
+                        {
+                            labels[i, j].BackColor = Color.Blue;
+                            opcion1[i, j] = Acuático;
                         }
                     }
                 }
